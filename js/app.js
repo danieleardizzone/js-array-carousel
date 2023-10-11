@@ -19,27 +19,33 @@ const galleryDOMElement = document.querySelector('.gallery');
 for (i = 0; i < images.length; i++){
     const printImage = 
     `<div class="image">
-        <img src="./img/${images[i]}"></img>
+        <img src="./img/${images[i]}">
     </div>`
     
     galleryDOMElement.innerHTML += printImage;
 }
 
-const imageDOMElement = document.getElementsByClassName('image');
-console.log(imageDOMElement);
-
-const firstImageDOMElement = imageDOMElement[0];
-const secondImageDOMElement = imageDOMElement[1];
-firstImageDOMElement.classList.add('active');
+const imageDOMElements = document.querySelectorAll('.image');
+console.log(imageDOMElements);
 
 
-console.log(imageDOMElement[0])
+let currentIndex = 4;
 
-firstImageDOMElement.addEventListener('click',
-function(){
-    firstImageDOMElement.classList.remove('active');
-    secondImageDOMElement.classList.add('active');
-})
+let currentSlide = imageDOMElements[currentIndex];
+currentSlide.classList.add('active');
 
-// - Tutte le immagini avranno display: none
+
+
+
+// SPOSTO CLASSE ACTIVE DALLA PRIMA ALLA SECONDA IMG
+
+
+
+
+
+// AL CLICK DI UN TASTO LA CLASSE ACTIVE PASSA DA UN ELEMENTO ALL'ALTRO ATTRAVERSO UN CICLO
+
+
+
+
 

@@ -23,6 +23,32 @@ img {
     display: none;
 }
 
-.active {
+.active{
     display: block;
+}
+
+.gallery{
+    position: relative;
+}
+
+.btn-up,
+.btn-down{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10px;
+
+    position: absolute;
+    z-index: 10;
+    left: calc(50% - 20px);
+
+    cursor: pointer;
+}
+
+.btn-down{
+    bottom: 0;
 }
