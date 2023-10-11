@@ -6,7 +6,6 @@
 
 img {
     max-width: 100%;
-    display: block;
 }
 
 .container {
@@ -21,6 +20,11 @@ img {
 
 .gallery > * {
     display: none;
+}
+
+.gallery img{
+    aspect-ratio: 21/9;
+	object-fit: cover;
 }
 
 .active{

@@ -28,24 +28,55 @@ for (i = 0; i < images.length; i++){
 const imageDOMElements = document.querySelectorAll('.image');
 console.log(imageDOMElements);
 
+console.log(imageDOMElements.length);
 
-let currentIndex = 4;
+let currentIndex = 0;
 
 let currentSlide = imageDOMElements[currentIndex];
 currentSlide.classList.add('active');
 
+// CONTROLLI
 
+const buttonDownDOMElement = document.querySelector('.btn-down');
+buttonDownDOMElement.addEventListener('click', function(){
+    console.log('click down');
 
+    if (currentIndex < imageDOMElements.length - 1){
+        currentSlide.classList.remove('active');
 
-// SPOSTO CLASSE ACTIVE DALLA PRIMA ALLA SECONDA IMG
+        currentIndex++;
 
+        currentSlide = imageDOMElements[currentIndex];
+        currentSlide.classList.add('active');
+    } else {
+        currentSlide.classList.remove('active');
 
+        currentIndex = 0;
 
+        currentSlide = imageDOMElements[currentIndex];
+        currentSlide.classList.add('active');
+    }
 
+})
 
-// AL CLICK DI UN TASTO LA CLASSE ACTIVE PASSA DA UN ELEMENTO ALL'ALTRO ATTRAVERSO UN CICLO
+const buttonUpDOMElement = document.querySelector('.btn-up');
+buttonUpDOMElement.addEventListener('click', function(){
+    console.log('click up');
 
+    if (currentIndex  > 0){
+        currentSlide.classList.remove('active');
 
+        currentIndex--;
 
+        currentSlide = imageDOMElements[currentIndex];
+        currentSlide.classList.add('active');
+    } else {
+        currentSlide.classList.remove('active');
 
+        currentIndex = imageDOMElements.length - 1;
 
+        currentSlide = imageDOMElements[currentIndex];
+        currentSlide.classList.add('active');
+    }
+
+})
